@@ -43,9 +43,7 @@ namespace MultithreadedMergeSort
             Random r = new Random();
 
             for (int i = 0; i < array.Length; i++)
-            {
                 array[i] = r.Next(0, 10000);
-            }
         }
 
         static void Main(string[] args)

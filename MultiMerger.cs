@@ -8,14 +8,12 @@ namespace MultithreadedMergeSort
 {
     class MultiMerger
     {
-        private int[] sorted;
+        public int[] sorted { get; private set; }
 
         public MultiMerger(int[] unsorted)
         {
             this.sorted = unsorted;
         }
-
-        public int[] Sorted() => this.sorted;
 
         //метод для слияния массивов
         public void Merge(int lowIndex, int middleIndex, int highIndex)
@@ -47,16 +45,14 @@ namespace MultithreadedMergeSort
                 index++;
             }
 
-            for (int i = right; i <= highIndex; i++)
+            for (int j = right; j <= highIndex; j++)
             {
-                tempArray[index] = sorted[i];
+                tempArray[index] = sorted[j];
                 index++;
             }
 
             for (int i = 0; i < tempArray.Length; i++)
-            {
                 sorted[lowIndex + i] = tempArray[i];
-            }
         }
 
         //однопоточная сортировка слиянием
